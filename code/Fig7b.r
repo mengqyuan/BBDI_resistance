@@ -1,6 +1,6 @@
 library(ggplot2)
 library(reshape2)
-library(ggbreak)
+library(ggbreak) #
 data=read.table("filgotinib_jq1_fc.txt",sep="\t",header=T,quote="")
 colnames(data)=c("drug","up","down")
 
@@ -32,4 +32,5 @@ coord_flip()
 p=p9+ theme_bw()+theme(axis.text.x = element_text(angle=30, hjust = 1,vjust=1))
 pdf("fig7b.pdf",width=4,height=5)
 print(p)
+
 dev.off()
