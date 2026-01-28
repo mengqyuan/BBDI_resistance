@@ -348,8 +348,8 @@ for(i in 1:6)
 	mfuzz_plot_defined(data.s,cl=cl_8,mfrow=c(1,1),single=i,centre=T,colo=color1,line.lwd=2,time.labels=c("SUM159DMSO","SUM159JQ1","SUM159RDMSO","SUM159RJQ1"),x11 = FALSE,centre.lwd=3,min.mem =0.6)
 	dev.off()
 }
-#########################figure 2d###########################
-#########################figure 2d###########################
+#########################figure 2d############################
+#########################figure 2d############################
 library("clusterProfiler")
 library("org.Hs.eg.db")
 library("ggplot2")
@@ -489,3 +489,4 @@ cds <- orderCells(cds,root_state=4)
 pdf("fig2g-2.pdf")
 plot_cell_trajectory(cds, color_by = "Pseudotime")+scale_color_gradientn(colours=c("#440154","#3C508B","#228E8D","#53C569","#EEE51C")) 
 dev.off()
+
