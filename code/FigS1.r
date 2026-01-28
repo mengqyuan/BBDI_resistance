@@ -1,7 +1,8 @@
-library(Seurat)
+library(Seurat) #
 load("SUM159.Rdata")
 SUM159 <- FindNeighbors(SUM159, reduction = "pca", dims = 1:10)
 SUM159=FindClusters(SUM159, resolution = 0.3)
 pdf("figs1.pdf")
 DimPlot(SUM159)
+
 dev.off()
