@@ -1,5 +1,5 @@
 #########################figure s4c############################
-#########################figure s4c###########################
+#########################figure s4c############################
 mat=read.table("infercnv.observations.txt",header=T,row.names=1,sep=" ",stringsAsFactors=F)
 gene=read.table("volcaplot.gene",sep="\t")
 mat_1=mat[gene[,1],]
@@ -68,4 +68,5 @@ re[,1]=as.numeric(re[,1])
 SUM159_plot=boxplot(score~Group,data=re,col=c("#8491B4","#B5D6FD","#FDC086","#B0CBA4"),outline=F)
 pdf("figs4e.pdf",height=5,width=5)
 boxplot(score~Group,data=re,col=c("#8491B4","#B5D6FD","#FDC086","#B0CBA4"),outline=F)
+
 dev.off()
