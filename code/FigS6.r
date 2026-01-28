@@ -1,4 +1,4 @@
-library(ggpubr)
+library(ggpubr) #
 score=read.table("SUM159CytoTRACE_plot_table.txt",header=T,sep="\t")
 p=ggboxplot(
   score,
@@ -12,4 +12,5 @@ p=ggboxplot(
   main = "CytoTRACE")  +theme(axis.text.x = element_text(angle = 90,hjust = 1,vjust = 1))
 pdf("figs6.pdf")
 p
+
 dev.off()
