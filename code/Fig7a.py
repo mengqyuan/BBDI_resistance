@@ -18,7 +18,8 @@ colname=data1.columns.tolist()
 pattern="LCP001_MCF10A.WT_24H:B08"
 match_index =[colname.index(pattern)]
 tanzhen = parse("level5_beta_trt_cp_n720216x12328.gctx",cidx=[match_index[0]])
-pre_res = gp.prerank(rnk=tanzhen.data_df, # or rnk = rnk,
+use_sorted = tanzhen.data_df.sort_values(tanzhen.data_df.columns[0],ascending=False)
+pre_res = gp.prerank(rnk=use_sorted, # or rnk = rnk,
                      gene_sets=geneset,
                      threads=4,
                      min_size=5,
@@ -32,4 +33,5 @@ out=pre_res.res2d
 terms = pre_res.res2d.Term
 tanzhen.data_df.to_csv("filgotinib_foldchange.txt",index=True)
 gseaplot(rank_metric=pre_res.ranking, term=terms[0], ofname='fig7a-1.pdf', **pre_res.results[terms[0]])
+
 gseaplot(rank_metric=pre_res.ranking, term=terms[1], ofname='fig7a-2.pdf', **pre_res.results[terms[1]])
