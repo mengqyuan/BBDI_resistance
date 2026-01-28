@@ -1,4 +1,4 @@
-library("clusterProfiler")
+library("clusterProfiler") #
 library("org.Hs.eg.db")
 library("ggplot2")
 outFile = function(temp,outFilePath,outFiletxt,outPDFPath){
@@ -39,4 +39,5 @@ data2=data[1:10,]
 p=ggplot(data=data2, aes(x=reorder(Description,V11),y=V11)) + geom_bar(stat="identity", width=0.6,fill="#A1B2CC")+ coord_flip() +  xlab("KEGG Pathway") + ylab("-log10(p)") + theme_bw()
 pdf("figs2.pdf")
 p
+
 dev.off()
