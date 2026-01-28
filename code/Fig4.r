@@ -1,5 +1,5 @@
-#########################figure 4a###########################
-#########################figure 4a###########################
+#########################figure 4a############################
+#########################figure 4a############################
 
 library(dplyr)
 library(cowplot)
@@ -590,5 +590,6 @@ re[,1]=as.numeric(re[,1])
 pdf("fig4i-2.pdf",height=5,width=3)
 boxplot(AUC~Group,data=re,col=c("#FDC086","#99DAA9"),outline=F)
 dev.off()
+
 
 
