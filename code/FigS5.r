@@ -1,5 +1,5 @@
 library("Seurat")
-library(cluster)
+library(cluster) #
 load("SUM159.Rdata")
 used=subset(SUM159,idents="SUM159RDMSO")
 count=used@assays$RNA@counts
@@ -34,4 +34,5 @@ p1=ggplot(score1,aes(res,mean_sihouette))+
 pdf("figs5.pdf")
 p1
 dev.off()
+
 
