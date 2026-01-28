@@ -1,5 +1,5 @@
-#########################figure 3a###########################
-#########################figure 3a###########################
+#########################figure 3a############################
+#########################figure 3a############################
 library(ggplot2)
 library(ggrepel)
 load("SUM159.Rdata")
@@ -36,4 +36,5 @@ p=ggplot(data,aes(data$avg_log2FC,-1*log10(data$p_val_adj))) +
                   show.legend=FALSE)
 pdf("fig3a.pdf")
 p
+
 dev.off()
