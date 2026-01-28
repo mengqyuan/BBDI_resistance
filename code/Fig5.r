@@ -1,5 +1,5 @@
-#########################figure 5a###########################
-#########################figure 5a###########################
+#########################figure 5a############################
+#########################figure 5a############################
 library("Seurat")
 library(cluster)
 load("SUM159.Rdata")
@@ -240,3 +240,4 @@ p1=pheatmap(final,scale="none",show_colnames=T,show_rownames=T,cluster_cols=F,cl
 pdf("ssgsea.heatmap.teyi.pdf")
 p1
 dev.off()
+
