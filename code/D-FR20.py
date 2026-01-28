@@ -19,7 +19,8 @@ def GSEA(start,end):
     outname="cmap/output_all/"+str(start)+"_"+str(end)+".txt"
     for i in range(int(start), int(end)):
         tanzhen = parse("level5_beta_trt_cp_n720216x12328.gctx",cidx=[i])
-        pre_res = gp.prerank(rnk=tanzhen.data_df, # or rnk = rnk,
+        use_sorted = tanzhen.data_df.sort_values(tanzhen.data_df.columns[0],ascending=False)
+        pre_res = gp.prerank(rnk=use_sorted, # or rnk = rnk,
                      gene_sets=geneset,
                      threads=4,
                      min_size=5,
@@ -34,4 +35,5 @@ def GSEA(start,end):
         out.to_csv(outname, sep="\t", index=False,header=False,mode="a")
 
 if __name__=='__main__':
+
     GSEA(sys.argv[1],sys.argv[2])
