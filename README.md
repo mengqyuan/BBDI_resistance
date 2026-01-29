@@ -13,8 +13,8 @@ Fig3.r - Code to replicate the plots in Figure 3a.
 Fig4.r - Code to replicate the plots in Figure 4a-i.  
 Fig5.r - Code to replicate the plots in Figure 5a, b, d-h.  
 CaDRReS.py - Code to replicate the plots in Figure 5c.  
-D-FR20.py - Code of D-FR20 method to identify small molecules to reverse BBDI resistance, as shown in Figure 6a.  
-Fig7a.py - Code to replicate the plots in Figure 7a.  
+
+Fig6a.py - Code to replicate the plots in Figure 6c.  
 Fig7b.r - Code to replicate the plots in Figure 7b.  
 FigS1.r - Code to replicate the plots in Figure S1.  
 FigS2.r - Code to replicate the plots in Figure S2.  
