@@ -9,7 +9,7 @@ The data sets analyzed in this study are available from the Gene Expression Omni
 ### ** Function of codes **
 
 Fig2.r - Code to replicate the plots in Figure 2a-g.  
-Fig3.r - Code to replicate the plots in Figure 3a and 3b.  
+Fig3.r - Code to replicate the plots in Figure 3a.  
 Fig4.r - Code to replicate the plots in Figure 4a-i.  
 Fig5.r - Code to replicate the plots in Figure 5a, b, d-h.  
 CaDRReS.py - Code to replicate the plots in Figure 5c.  
