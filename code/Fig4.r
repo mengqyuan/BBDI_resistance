@@ -211,14 +211,17 @@ heatmap_gene=intersect(tfname_use,unique(fer_tf))
 index=is.element(tfname_use,heatmap_gene)
 aucvalue=(regulonAUC@assays@data@listData$AUC)
 plot_value=aucvalue[index,]
+allpvalue=c()
 allpvaluegreater=c()
 allpvalueless=c()
 retain=c()
 up_tf=c()
 down_tf=c()
 for(i in 1:dim(plot_value)[1]){
+	p=wilcox.test(plot_value[i,1:751],plot_value[i,752:1881])
 	p_greater=wilcox.test(plot_value[i,1:751],plot_value[i,752:1881],alternative ="greater")
 	p_less=wilcox.test(plot_value[i,1:751],plot_value[i,752:1881],alternative ="less")
+	allpvalue=c(allpvalue,p$p.value)
 	allpvaluegreater=c(allpvaluegreater,p_greater$p.value)
 	allpvalueless=c(allpvalueless,p_less$p.value)
 	if(p_less$p.value<0.01){
@@ -230,7 +233,7 @@ for(i in 1:dim(plot_value)[1]){
 		down_tf=c(down_tf,rownames(plot_value)[i])
 	}
 }
-pvalue_out=cbind(rownames(plot_value),allpvaluegreater,allpvalueless) #ATF3(+) 0.102872547324011
+pvalue_out=cbind(rownames(plot_value),allpvalue,allpvaluegreater,allpvalueless) 
 up_tf_use=gsub("[(+)]","",up_tf)
 down_tf_use=gsub("[(+)]","",down_tf)
 print(length(retain)) 
@@ -589,5 +592,6 @@ re[,1]=as.numeric(re[,1])
 pdf("fig4i-2.pdf",height=5,width=3)
 boxplot(AUC~Group,data=re,col=c("#FDC086","#99DAA9"),outline=F)
 dev.off()
+
 
 
