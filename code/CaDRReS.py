@@ -33,4 +33,5 @@ print('Predicting drug response using CaDRReS: {}'.format(model_spec_name))
 pred_df, P_test_df= model.predict_from_model(cadrres_model, test_kernel_df, model_spec_name)
 print('done!')
 print('Saving ' + model_dir + '{}_test_pred.csv'.format(model_spec_name))
+
 pred_df.to_csv("log2_IC50.pred.csv") #Predicted drug response (log2 IC50)
