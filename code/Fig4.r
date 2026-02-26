@@ -476,8 +476,7 @@ use[4:6,2]="Sensitive"
 use[10:12,2]="Sensitive"
 p=ggbarplot(use, x = "cell line", y = "score", 
           add = c("mean_se"),
-          color = "Group",fill = "Group", palette = c("#FDC086","#8491B4"),position = position_dodge(0.8))+
-stat_compare_means(aes(group = Group), label = "p.format",method = "t.test") +
+          color = "Group",fill = "Group", palette = c("#FDC086","#8491B4"),position = position_dodge(0.8)) +
   #rotate_x_text(angle = 45) +
   ylab("Score") + #
   theme(legend.position="right") +  
@@ -520,8 +519,7 @@ use[1,2]="Sensitive"
 use[4,2]="Sensitive"
 p=ggbarplot(use, x = "cell line", y = "score", 
           #add = c("mean_se"),
-          color = "Group",fill = "Group", palette = c("#FDC086","#8491B4"),position = position_dodge(0.8))+
-stat_compare_means(aes(group = Group), label = "p.format",method = "t.test") +
+          color = "Group",fill = "Group", palette = c("#FDC086","#8491B4"),position = position_dodge(0.8)) +
   #rotate_x_text(angle = 45) +
   ylab("Score") + 
   theme(legend.position="right") +  
@@ -592,6 +590,7 @@ re[,1]=as.numeric(re[,1])
 pdf("fig4i-2.pdf",height=5,width=3)
 boxplot(AUC~Group,data=re,col=c("#FDC086","#99DAA9"),outline=F)
 dev.off()
+
 
 
 
